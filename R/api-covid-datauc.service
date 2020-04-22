@@ -1,0 +1,10 @@
+[Unit]
+Description=COVID DATAUC API
+
+[Service]
+ExecStart=/usr/bin/Rscript -e "api <- plumber::plumb('R/02-funciones-api.R'); api$run(port = 8080, host = '0.0.0.0')" 
+Restart=on-abnormal
+WorkingDirectory=/srv/plumber/api-covid19-datauc
+
+[Install]
+WantedBy=multi-user.target
