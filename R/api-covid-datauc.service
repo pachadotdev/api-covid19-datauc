@@ -1,5 +1,5 @@
 [Unit]
-Description=COVID DATAUC API
+Description=api-covid19-datauc
 
 [Service]
 ExecStart=/usr/bin/Rscript -e "api <- plumber::plumb('R/02-funciones-api.R'); api$run(port = 8080, host = '0.0.0.0')" 
