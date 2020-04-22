@@ -4,7 +4,7 @@ La idea de esta API es **facilitar** la consulta de los datos proporcionados por
 
 Los cambios sobre los datos originales consisten en transformarlos para llevarlos a una estructura de filas y columnas conocida como [tidy data](https://es.r4ds.hadley.nz/datos-ordenados.html) (datos ordenados).
 
-La API se puede consultar en http://coronavirus-api.mat.uc.cl/.
+La API se puede consultar en https://coronavirus-api.mat.uc.cl/.
 
 ## Datos disponibles
 
@@ -37,6 +37,8 @@ Ver documentación oficial más abajo
 
 ## Consideraciones
 
+- La API se reinicia todos los días a las 02.00.00 hora de Chile Continental (según horaoficial.cl) para incorporar los últimos datos de las fuentes oficiales
+- El tiempo de baja de la actualización de la API es de 5 a 7 segundos a la hora indicada
 - Requiere una versión de `plumber::` que aún no está en CRAN pero se puede instalar usando `devtools::install_github("pachamaltese/plumber", ref = "csv-serializer")` 
 - Esto se debe a que, de momento la versión en CRAN de `plumber::`, tiene salida JSON pero no CSV
 
@@ -46,8 +48,8 @@ Desde R basta con ejecutar cualquiera de las siguientes funciones cambiando `pro
 
 ```r
 # son equivalentes
-readr::read_csv("http://localhost:8080/producto1")
-data.table::fread("http://localhost:8080/producto1")
+readr::read_csv("https://coronavirus-api.mat.uc.cl/producto1")
+data.table::fread("https://coronavirus-api.mat.uc.cl/producto1")
 ```
 
 Con otros lenguajes es idéntico. El servicio REST lo que hace es serializar CSV que incluso se puede llevar a Excel haciendo copiar y pegar.
