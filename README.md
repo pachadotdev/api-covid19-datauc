@@ -29,12 +29,24 @@ Ver documentación oficial más abajo
 - [x] Producto 17
 - [x] Producto 18
 - [x] Producto 19
-- [ ] Producto 20
+- [x] Producto 20
 
 ## Consideraciones
 
 - Requiere una versión de `plumber::` que aún no está en CRAN pero se puede instalar usando `devtools::install_github("pachamaltese/plumber", ref = "csv-serializer")` 
 - Esto se debe a que, de momento la versión en CRAN de `plumber::`, tiene salida JSON pero no CSV
+
+## Uso
+
+Desde R basta con ejecutar cualquiera de las siguientes funciones cambiando `producto1` por `producto2`, ..., `producto20`:
+
+```r
+# son equivalentes
+readr::read_csv("http://localhost:8080/producto1")
+data.table::fread("http://localhost:8080/producto1")
+```
+
+Con otros lenguajes es idéntico. El servicio REST lo que hace es serializar CSV que incluso se puede llevar a Excel haciendo copiar y pegar.
 
 # Readme Original Ministerio de Ciencia
 
