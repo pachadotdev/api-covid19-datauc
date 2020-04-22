@@ -54,7 +54,18 @@ producto6 <- read_csv("output/producto6/bulk/data.csv") %>%
   janitor::clean_names() %>% 
   select(fecha, everything())
   
-producto7 <- ordenar("output/producto7/PCR.csv")
+producto7 <- read_csv("output/producto7/PCR.csv") %>% 
+  janitor::clean_names() %>% 
+  mutate_if(is.numeric, as.character) %>% 
+  pivot_longer(cols = starts_with("x"), names_to = "fecha",
+               values_to = "casos") %>%
+  mutate(fecha = str_remove(fecha, "x"),
+         fecha = ymd(fecha)) %>%
+  mutate(casos = str_remove(casos, "-"),
+         casos = as.numeric(casos),
+         poblacion = as.numeric(poblacion),
+         codigo_region = as.numeric(codigo_region)) %>% 
+  select(fecha, everything())
 
 producto8 <- ordenar("output/producto8/UCI.csv")
 
