@@ -148,3 +148,31 @@ function() {
 function() {
   producto20
 }
+
+#* producto21
+#* @serializer csv
+#* @get /producto21
+function() {
+  producto21
+}
+
+#* producto22
+#* @serializer csv
+#* @get /producto22
+function() {
+  producto22
+}
+
+#* producto23
+#* @serializer csv
+#* @get /producto23
+function() {
+  producto23
+}
+
+#* producto24
+#* @serializer csv
+#* @get /producto24
+function() {
+  producto24
+}

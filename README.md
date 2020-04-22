@@ -30,6 +30,10 @@ Ver documentación oficial más abajo
 - [x] Producto 18
 - [x] Producto 19
 - [x] Producto 20
+- [x] Producto 21
+- [x] Producto 22
+- [x] Producto 23
+- [x] Producto 24
 
 ## Consideraciones
 
@@ -38,7 +42,7 @@ Ver documentación oficial más abajo
 
 ## Uso
 
-Desde R basta con ejecutar cualquiera de las siguientes funciones cambiando `producto1` por `producto2`, ..., `producto20`:
+Desde R basta con ejecutar cualquiera de las siguientes funciones cambiando `producto1` por `producto2`, ..., `producto24`:
 
 ```r
 # son equivalentes

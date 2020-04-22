@@ -43,7 +43,7 @@ producto4 <- purrr::map_df(archivos_producto4, ordenar2, p  = "producto4")
 
 producto5 <- read_csv("output/producto5/TotalesNacionales.csv") %>% 
   janitor::clean_names() %>% 
-  rename(grupo = fecha) %>%
+  rename(categoria = fecha) %>%
   pivot_longer(cols = starts_with("x"), names_to = "fecha", values_to = "casos") %>%
   mutate(fecha = str_remove(fecha, "x"),
          fecha = ymd(fecha)) %>%
@@ -106,7 +106,7 @@ producto15_2 <- read_csv("output/producto15/SemanasEpidemiologicas.csv") %>%
   spread(fecha, casos)
 
 producto15 <- producto15 %>% 
-  left_join(producto15_2) %>% 
+  left_join(producto15_2, by = "semana_epidemiologica") %>% 
   select(matches("semana"), everything()) %>% 
   arrange(inicio_semana_epidemiologica)
 
@@ -121,6 +121,44 @@ producto18 <- ordenar("output/producto18/TasadeIncidencia.csv")
 producto19 <- ordenar("output/producto19/CasosActivosPorComuna.csv")
 
 producto20 <- ordenar("output/producto20/NumeroVentiladores.csv")
+
+producto21 <- ordenar("output/producto21/SintomasCasosConfirmados.csv") %>% 
+  mutate(categoria = "Casos Confirmados")
+
+producto21_2 <- ordenar("output/producto21/SintomasHospitalizados.csv") %>% 
+  mutate(categoria = "Hospitalizados")
+
+producto21 <- producto21 %>% 
+  bind_rows(producto21_2) %>% 
+  select(fecha, categoria, sintomas, casos)
+
+rm(producto21_2)
+
+producto22 <- ordenar("output/producto22/HospitalizadosEtario_Acumulado.csv") %>% 
+  mutate(categoria = "Hospitalizados agregado")
+
+producto22_2 <- ordenar("output/producto22/HospitalizadosUCI_Acumulado.csv") %>% 
+  mutate(categoria = "Hospitalizados UCI")
+
+producto22 <- producto22 %>% 
+  bind_rows(producto22_2) %>% 
+  select(fecha, categoria, grupo_de_edad, casos)
+
+rm(producto22_2)
+
+producto23 <- read_csv("output/producto23/PacientesCriticos.csv") %>% 
+  janitor::clean_names() %>% 
+  rename(categoria = casos) %>% 
+  pivot_longer(cols = starts_with("x"), names_to = "fecha", values_to = "casos") %>% 
+  mutate(fecha = str_remove(fecha, "x"),
+         fecha = ymd(fecha)) %>%
+  mutate(casos = str_remove(casos, "-"),
+         casos = as.numeric(casos),
+         categoria = gsub("criticos", "críticos", categoria)) %>% 
+  select(fecha, everything())
+
+producto24 <- ordenar("output/producto24/CamasHospital_Diario.csv") %>% 
+  mutate(tipo_de_cama = gsub("Basica", "Básica", tipo_de_cama))
 
 rm(archivos_producto2, archivos_producto4, ordenar, ordenar2)
 
