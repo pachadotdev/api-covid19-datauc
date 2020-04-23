@@ -12,3 +12,4 @@ data
 src
 requirements.txt
 .github/workflows
+output
