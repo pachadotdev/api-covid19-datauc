@@ -6,7 +6,8 @@ function() {
   list("¡Hola Mundo!",
   "Visita github.com/pachamaltese/api-covid19-datauc para ver la documentación,
   cómo aportar, código de conducta, código DOI y más.",
-  "También me puedes preguntar por Twitter (@pachamaltese)"
+  "También nos puedes preguntar por Twitter, tanto al equipo @datauc_chile como
+  a @pachamaltese."
   )
 }
 

@@ -1,4 +1,4 @@
-# Readme Data UC
+# Readme Equipo DataUC y @pachamaltese
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3762786.svg)](https://doi.org/10.5281/zenodo.3762786)
 
@@ -12,30 +12,30 @@ La API se puede consultar en https://coronavirus-api.mat.uc.cl/.
 
 Ver documentación oficial más abajo
 
-- [x] Producto 1
-- [x] Producto 2
-- [x] Producto 3
-- [x] Producto 4
-- [x] Producto 5
-- [x] Producto 6
-- [x] Producto 7
-- [x] Producto 8
-- [x] Producto 9
-- [x] Producto 10
-- [x] Producto 11 (¿es igual a producto 4 según los datos?)
-- [x] Producto 12 (¿es igual a producto 7 según los datos?)
-- [x] Producto 13
-- [x] Producto 14
-- [x] Producto 15
-- [x] Producto 16
-- [x] Producto 17
-- [x] Producto 18
-- [x] Producto 19
-- [x] Producto 20
-- [x] Producto 21
-- [x] Producto 22
-- [x] Producto 23
-- [x] Producto 24
+- [x] Producto 1: Casos totales por comuna incremental
+- [x] Producto 2: Casos totales por comuna
+- [x] Producto 3: Casos totales por región incremental
+- [x] Producto 4: Casos totales por región
+- [x] Producto 5: Totales Nacionales Diarios
+- [x] Producto 6: Enriquecimiento del producto 2
+- [x] Producto 7: Exámenes PCR por región
+- [x] Producto 8: Pacientes en UCI por región
+- [x] Producto 9: Pacientes en UCI por grupo de edad
+- [x] Producto 10: Fallecidos por grupo de edad
+- [x] Producto 11: Enriquecimiento del producto 4
+- [x] Producto 12: Enriquecimiento del producto 7
+- [x] Producto 13: Casos nuevos por región incremental
+- [x] Producto 14: Fallecidos por región incremental
+- [x] Producto 15: Casos nuevos por fecha de inicio de síntomas por comuna
+- [x] Producto 16: Casos por genero y grupo de edad
+- [x] Producto 17: PCR acumulado e informado en el último día por tipo de establecimientos
+- [x] Producto 18: Tasa de incidencia historica por comuna y total regional
+- [x] Producto 19: Casos activos por fecha de inicio de síntomas y comuna
+- [x] Producto 20: Ventiladores a nivel nacional
+- [x] Producto 21: Sintomas por Casos Confirmados e informado en el último día
+- [x] Producto 22: Hospitalizados por grupo de edad
+- [x] Producto 23: Pacientes críticos
+- [x] Producto 24: Hospitalización de pacientes en sistema integrado
 
 ## Consideraciones
 
