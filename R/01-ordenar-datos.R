@@ -144,7 +144,7 @@ producto22_2 <- ordenar("output/producto22/HospitalizadosUCI_Acumulado.csv") %>%
 
 producto22 <- producto22 %>%
   bind_rows(producto22_2) %>%
-  select(fecha, categoria, grupo_de_edad, casos)
+  select(fecha, categoria, sexo, grupo_de_edad, casos)
 
 rm(producto22_2)
 
