@@ -13,168 +13,168 @@ function() {
 
 #* producto1
 #* @serializer csv
-#* @get /producto1
+#* @get /casos_totales_comuna_incremental
 function() {
   producto1
 }
 
 #* producto2
 #* @serializer csv
-#* @get /producto2
+#* @get /casos_totales_comuna
 function() {
   producto2
 }
 
 #* producto3
 #* @serializer csv
-#* @get /producto3
+#* @get /casos_totales_region_incremental
 function() {
   producto3
 }
 
 #* producto4
 #* @serializer csv
-#* @get /producto4
+#* @get /casos_totales_region
 function() {
   producto4
 }
 
 #* producto5
 #* @serializer csv
-#* @get /producto5
+#* @get /totales_nacionales_diarios
 function() {
   producto5
 }
 
 #* producto6
 #* @serializer csv
-#* @get /producto6
+#* @get /casos_totales_comuna_enriquecido
 function() {
   producto6
 }
 
 #* producto7
 #* @serializer csv
-#* @get /producto7
+#* @get /examenes_pcr_region
 function() {
   producto7
 }
 
 #* producto8
 #* @serializer csv
-#* @get /producto8
+#* @get /pacientes_uci_region
 function() {
   producto8
 }
 
 #* producto9
 #* @serializer csv
-#* @get /producto9
+#* @get /pacientes_uci_grupo_edad
 function() {
   producto9
 }
 
 #* producto10
 #* @serializer csv
-#* @get /producto10
+#* @get /fallecidos_grupo_edad
 function() {
   producto10
 }
 
 #* producto11
 #* @serializer csv
-#* @get /producto11
+#* @get /casos_totales_region_enriquecido
 function() {
   producto11
 }
 
 #* producto12
 #* @serializer csv
-#* @get /producto12
+#* @get /examenes_pcr_region_enriquecido
 function() {
   producto12
 }
 
 #* producto13
 #* @serializer csv
-#* @get /producto13
+#* @get /casos_nuevos_region_incremental
 function() {
   producto13
 }
 
 #* producto14
 #* @serializer csv
-#* @get /producto14
+#* @get /fallecidos_region_incremental
 function() {
   producto14
 }
 
 #* producto15
 #* @serializer csv
-#* @get /producto15
+#* @get /casos_nuevos_sintomas_comuna
 function() {
   producto15
 }
 
 #* producto16
 #* @serializer csv
-#* @get /producto16
+#* @get /casos_genero_grupo_edad
 function() {
   producto16
 }
 
 #* producto17
 #* @serializer csv
-#* @get /producto17
+#* @get /pcr_acumulado_establecimiendo
 function() {
   producto17
 }
 
 #* producto18
 #* @serializer csv
-#* @get /producto18
+#* @get /incidencia_comuna_total_regional
 function() {
   producto18
 }
 
 #* producto19
 #* @serializer csv
-#* @get /producto19
+#* @get /casos_activos_sintomas_comuna
 function() {
   producto19
 }
 
 #* producto20
 #* @serializer csv
-#* @get /producto20
+#* @get /ventiladores_nacional
 function() {
   producto20
 }
 
 #* producto21
 #* @serializer csv
-#* @get /producto21
+#* @get /casos_confirmados_sintomas
 function() {
   producto21
 }
 
 #* producto22
 #* @serializer csv
-#* @get /producto22
+#* @get /hospitalizados_grupo_edad
 function() {
   producto22
 }
 
 #* producto23
 #* @serializer csv
-#* @get /producto23
+#* @get /pacientes_criticos
 function() {
   producto23
 }
 
 #* producto24
 #* @serializer csv
-#* @get /producto24
+#* @get /hospitalizacion_sistema_integrado
 function() {
   producto24
 }
