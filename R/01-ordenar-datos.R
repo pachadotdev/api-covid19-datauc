@@ -139,14 +139,14 @@ rm(producto21_2)
 producto22 <- ordenar("output/producto22/HospitalizadosEtario_Acumulado.csv") %>% 
   mutate(categoria = "Hospitalizados agregado")
 
-# producto22_2 <- ordenar("output/producto22/HospitalizadosUCI_Acumulado.csv") %>% 
-#   mutate(categoria = "Hospitalizados UCI")
-# 
-# producto22 <- producto22 %>% 
-#   bind_rows(producto22_2) %>% 
-#   select(fecha, categoria, grupo_de_edad, casos)
-# 
-# rm(producto22_2)
+producto22_2 <- ordenar("output/producto22/HospitalizadosUCI_Acumulado.csv") %>%
+  mutate(categoria = "Hospitalizados UCI")
+
+producto22 <- producto22 %>%
+  bind_rows(producto22_2) %>%
+  select(fecha, categoria, grupo_de_edad, casos)
+
+rm(producto22_2)
 
 producto23 <- read_csv("output/producto23/PacientesCriticos.csv") %>% 
   janitor::clean_names() %>% 
