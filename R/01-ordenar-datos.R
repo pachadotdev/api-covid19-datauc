@@ -9,6 +9,8 @@ library(purrr)
 
 # Funciones y rutas ----
 
+try(dir.create("data"))
+
 ordenar <- function(x) {
   read_csv(x) %>% 
     janitor::clean_names() %>% 

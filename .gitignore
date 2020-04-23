@@ -5,9 +5,5 @@ temp*
 *.ipynb
 __pycache__
 
-input
-src
-requirements.txt
-
 .Rproj.user
 .Rhistory
