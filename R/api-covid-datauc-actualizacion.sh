@@ -1,8 +1,7 @@
 #!/bin/bash
 cd /srv/plumber/api-covid19-datauc
-git add -A .
-git stash
-git checkout master
+rm README.md
+rm -rf output
 git pull
 git fetch upstream
 git merge upstream/master
