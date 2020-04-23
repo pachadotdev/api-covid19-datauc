@@ -12,30 +12,30 @@ La API se puede consultar en https://coronavirus-api.mat.uc.cl/.
 
 Ver documentación oficial más abajo
 
-- [x] Producto 1: Casos totales por comuna incremental (https://coronavirus-api.mat.uc.cl/casos_totales_comuna_incremental)
-- [x] Producto 2: Casos totales por comuna (https://coronavirus-api.mat.uc.cl/casos_totales_comuna)
-- [x] Producto 3: Casos totales por región incremental (https://coronavirus-api.mat.uc.cl/casos_totales_region_incremental)
-- [x] Producto 4: Casos totales por región (https://coronavirus-api.mat.uc.cl/casos_totales_region)
-- [x] Producto 5: Totales Nacionales Diarios (https://coronavirus-api.mat.uc.cl/totales_nacionales_diarios)
-- [x] Producto 6: Enriquecimiento del producto 2 (https://coronavirus-api.mat.uc.cl/casos_totales_comuna_enriquecido)
-- [x] Producto 7: Exámenes PCR por región (https://coronavirus-api.mat.uc.cl/examenes_pcr_region)
-- [x] Producto 8: Pacientes en UCI por región (https://coronavirus-api.mat.uc.cl/pacientes_uci_region)
-- [x] Producto 9: Pacientes en UCI por grupo de edad (https://coronavirus-api.mat.uc.cl/pacientes_uci_grupo_edad)
-- [x] Producto 10: Fallecidos por grupo de edad (https://coronavirus-api.mat.uc.cl/fallecidos_grupo_edad)
-- [x] Producto 11: Enriquecimiento del producto 4 (https://coronavirus-api.mat.uc.cl/casos_totales_region_enriquecido)
-- [x] Producto 12: Enriquecimiento del producto 7 (https://coronavirus-api.mat.uc.cl/examenes_pcr_region_enriquecido)
-- [x] Producto 13: Casos nuevos por región incremental (https://coronavirus-api.mat.uc.cl/casos_nuevos_region_incremental)
-- [x] Producto 14: Fallecidos por región incremental (https://coronavirus-api.mat.uc.cl/fallecidos_region_incremental)
-- [x] Producto 15: Casos nuevos por fecha de inicio de síntomas por comuna (https://coronavirus-api.mat.uc.cl/casos_nuevos_sintomas_comuna)
-- [x] Producto 16: Casos por genero y grupo de edad (https://coronavirus-api.mat.uc.cl/casos_genero_grupo_edad)
-- [x] Producto 17: PCR acumulado e informado en el último día por tipo de establecimientos (https://coronavirus-api.mat.uc.cl/pcr_acumulado_establecimiendo)
-- [x] Producto 18: Tasa de incidencia historica por comuna y total regional (https://coronavirus-api.mat.uc.cl/incidencia_comuna_total_regional)
-- [x] Producto 19: Casos activos por fecha de inicio de síntomas y comuna (https://coronavirus-api.mat.uc.cl/casos_activos_sintomas_comuna)
-- [x] Producto 20: Ventiladores a nivel nacional (https://coronavirus-api.mat.uc.cl/ventiladores_nacional)
-- [x] Producto 21: Sintomas por Casos Confirmados e informado en el último día (https://coronavirus-api.mat.uc.cl/casos_confirmados_sintomas)
-- [x] Producto 22: Hospitalizados por grupo de edad (https://coronavirus-api.mat.uc.cl/hospitalizados_grupo_edad)
-- [x] Producto 23: Pacientes críticos (https://coronavirus-api.mat.uc.cl/pacientes_criticos)
-- [x] Producto 24: Hospitalización de pacientes en sistema integrado (https://coronavirus-api.mat.uc.cl/hospitalizacion_sistema_integrado)
+- [x] Producto 1: Casos totales por comuna incremental https://coronavirus-api.mat.uc.cl/casos_totales_comuna_incremental
+- [x] Producto 2: Casos totales por comuna https://coronavirus-api.mat.uc.cl/casos_totales_comuna
+- [x] Producto 3: Casos totales por región incremental https://coronavirus-api.mat.uc.cl/casos_totales_region_incremental
+- [x] Producto 4: Casos totales por región https://coronavirus-api.mat.uc.cl/casos_totales_region
+- [x] Producto 5: Totales Nacionales Diarios https://coronavirus-api.mat.uc.cl/totales_nacionales_diarios
+- [x] Producto 6: Enriquecimiento del producto 2 https://coronavirus-api.mat.uc.cl/casos_totales_comuna_enriquecido
+- [x] Producto 7: Exámenes PCR por región https://coronavirus-api.mat.uc.cl/examenes_pcr_region
+- [x] Producto 8: Pacientes en UCI por región https://coronavirus-api.mat.uc.cl/pacientes_uci_region
+- [x] Producto 9: Pacientes en UCI por grupo de edad https://coronavirus-api.mat.uc.cl/pacientes_uci_grupo_edad
+- [x] Producto 10: Fallecidos por grupo de edad https://coronavirus-api.mat.uc.cl/fallecidos_grupo_edad
+- [x] Producto 11: Enriquecimiento del producto 4 https://coronavirus-api.mat.uc.cl/casos_totales_region_enriquecido
+- [x] Producto 12: Enriquecimiento del producto 7 https://coronavirus-api.mat.uc.cl/examenes_pcr_region_enriquecido
+- [x] Producto 13: Casos nuevos por región incremental https://coronavirus-api.mat.uc.cl/casos_nuevos_region_incremental
+- [x] Producto 14: Fallecidos por región incremental https://coronavirus-api.mat.uc.cl/fallecidos_region_incremental
+- [x] Producto 15: Casos nuevos por fecha de inicio de síntomas por comuna https://coronavirus-api.mat.uc.cl/casos_nuevos_sintomas_comuna
+- [x] Producto 16: Casos por genero y grupo de edad https://coronavirus-api.mat.uc.cl/casos_genero_grupo_edad
+- [x] Producto 17: PCR acumulado e informado en el último día por tipo de establecimientos https://coronavirus-api.mat.uc.cl/pcr_acumulado_establecimiendo
+- [x] Producto 18: Tasa de incidencia historica por comuna y total regional https://coronavirus-api.mat.uc.cl/incidencia_comuna_total_regional
+- [x] Producto 19: Casos activos por fecha de inicio de síntomas y comuna https://coronavirus-api.mat.uc.cl/casos_activos_sintomas_comuna
+- [x] Producto 20: Ventiladores a nivel nacional https://coronavirus-api.mat.uc.cl/ventiladores_nacional
+- [x] Producto 21: Sintomas por Casos Confirmados e informado en el último día https://coronavirus-api.mat.uc.cl/casos_confirmados_sintomas
+- [x] Producto 22: Hospitalizados por grupo de edad https://coronavirus-api.mat.uc.cl/hospitalizados_grupo_edad
+- [x] Producto 23: Pacientes críticos https://coronavirus-api.mat.uc.cl/pacientes_criticos
+- [x] Producto 24: Hospitalización de pacientes en sistema integrado https://coronavirus-api.mat.uc.cl/hospitalizacion_sistema_integrado
 
 ## Consideraciones
 
