@@ -36,7 +36,7 @@ Ver documentación oficial más abajo
 - [x] Producto 22: Hospitalizados por grupo de edad (https://coronavirus-api.mat.uc.cl/hospitalizados_grupo_edad)
 - [x] Producto 23: Pacientes críticos (https://coronavirus-api.mat.uc.cl/pacientes_criticos)
 - [x] Producto 24: Hospitalización de pacientes en sistema integrado (https://coronavirus-api.mat.uc.cl/hospitalizacion_sistema_integrado)
- (https://coronavirus-api.mat.uc.cl/
+
 ## Consideraciones
 
 - La API se reinicia todos los días a las 02.00.00 hora de Chile Continental (según horaoficial.cl) para incorporar los últimos datos de las fuentes oficiales
