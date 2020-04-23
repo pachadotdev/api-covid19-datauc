@@ -54,6 +54,10 @@ data.table::fread("https://coronavirus-api.mat.uc.cl/producto1")
 
 Con otros lenguajes es idéntico. El servicio REST lo que hace es serializar CSV que incluso se puede llevar a Excel haciendo copiar y pegar.
 
+## Código de conducta
+
+Revisa el código de conducta en el siguiente enlace: https://github.com/pachamaltese/api-covid19-datauc/CODE_OF_CONDUCT.md
+
 # Readme Original Ministerio de Ciencia
 
 ## Datos-COVID19

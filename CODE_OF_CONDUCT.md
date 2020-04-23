@@ -1,0 +1,7 @@
+Este es un proyecto abierto a la comunidad en el que todas las personas están invitadas a participar, **siempre y cuando adscriban nuestro código de conducta**. Si tienes interés en participar en la revisión de las traducciones, lee el README de este repositorio para conocer la organización del trabajo y crea nuevos issues poder comunicarnos si tienes mejoras o nuevas ideas. 
+
+# Código de conducta
+
+_La API de los datos oficiales de Coronavirus es un espacio abierto que tiene por objetivo la generación de recursos para la comunidad científica y público en general a través de una dinámica de trabajo colaborativa. Se espera que las personas puedan participar libremente, compartiendo ideas, haciendo sugerencias, proponiendo cambios, analizando puntos de vista, etc., en un ambiente de respeto y colaboración. Asimismo, se espera que quienes participen hagan críticas justas, constructivas y propositivas, no juicios de valor._
+
+_En todo momento se cautelará que la discusión sea un ambiente libre de acoso y hostigamiento, independiente del sexo, identidad, género, edad, orientación sexual, discapacidad, apariencia física, tamaño corporal, raza, etnia, religión (o la falta de ella), ideología, nacionalidad, variante lingüística u opciones tecnológicas. No se tolerará el acoso ni el hostigamiento en ninguna de sus formas. Quienes incurran en este tipo de conductas serán marginados del proceso de trabajo de forma permanente. El lenguaje sexual y las imágenes de ese tipo no son apropiados en ningún espacio de este proyecto._
