@@ -58,7 +58,7 @@ Con otros lenguajes es idéntico. El servicio REST lo que hace es serializar CSV
 
 ## Código de conducta
 
-Revisa el código de conducta en el siguiente enlace: https://github.com/pachamaltese/api-covid19-datauc/CODE_OF_CONDUCT.md
+Revisa el código de conducta en el siguiente enlace: https://github.com/pachamaltese/api-covid19-datauc/blob/master/CODE_OF_CONDUCT.md
 
 ## Citar
 
