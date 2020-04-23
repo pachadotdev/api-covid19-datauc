@@ -1,5 +1,7 @@
 # Readme Data UC
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3762786.svg)](https://doi.org/10.5281/zenodo.3762786)
+
 La idea de esta API es **facilitar** la consulta de los datos proporcionados por el Ministerio de Ciencia. **No** hay cambios ni verificaciones sobre las cifras reportadas en los datos originales.
 
 Los cambios sobre los datos originales consisten en transformarlos para llevarlos a una estructura de filas y columnas conocida como [tidy data](https://es.r4ds.hadley.nz/datos-ordenados.html) (datos ordenados).
@@ -57,6 +59,27 @@ Con otros lenguajes es idéntico. El servicio REST lo que hace es serializar CSV
 ## Código de conducta
 
 Revisa el código de conducta en el siguiente enlace: https://github.com/pachamaltese/api-covid19-datauc/CODE_OF_CONDUCT.md
+
+## Citar
+
+### Formato Chicago
+
+Vargas, Mauricio. "API COVID19 DATAUC". Pontificia Universidad Católica de Chile. Consultado el 23 de abril de, 2020. https://coronavirus-api.mat.uc.cl/
+
+### Entrada BibTeX
+
+``` 
+@misc{open_trade_statistics_2019,
+      title = {API COVID19 DATAUC},
+      url = {https://coronavirus-api.mat.uc.cl/},
+      author = {Vargas, Mauricio},
+      doi = {doi.org/10.5281/zenodo.3762786},
+      publisher = {Pontificia Universidad Cat\'olica de Chile},
+      year = {2020},
+      month = {Apr},
+      note = {Accessed: April 23, 2020}
+  }
+``` 
 
 # Readme Original Ministerio de Ciencia
 
