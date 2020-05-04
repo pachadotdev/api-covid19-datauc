@@ -118,7 +118,7 @@ producto16 <- ordenar("output/producto16/CasosGeneroEtario.csv")
 
 producto17 <- ordenar("output/producto17/PCREstablecimiento.csv")
 
-producto18 <- ordenar("output/producto18/TasadeIncidencia.csv")
+producto18 <- ordenar("output/producto18/TasaDeIncidencia.csv")
 
 producto19 <- ordenar("output/producto19/CasosActivosPorComuna.csv")
 
