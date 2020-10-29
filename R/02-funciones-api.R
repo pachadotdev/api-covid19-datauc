@@ -1,4 +1,4 @@
-load("data/datos-ordenados.RData")
+load("/srv/plumber/api-covid19-datauc/data/datos-ordenados.RData")
 
 #* bienvenida
 #* @get /
