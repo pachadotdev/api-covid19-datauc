@@ -55,7 +55,7 @@ producto5 <- read_csv("output/producto5/TotalesNacionales.csv") %>%
 producto6 <- read_csv("output/producto6/bulk/data.csv") %>% 
   janitor::clean_names() %>% 
   select(fecha, everything())
-  
+
 producto7 <- read_csv("output/producto7/PCR.csv") %>% 
   janitor::clean_names() %>% 
   mutate_if(is.numeric, as.character) %>% 
@@ -94,11 +94,11 @@ producto14 <- ordenar("output/producto14/FallecidosCumulativo.csv")
 producto15 <- read_csv("output/producto15/FechaInicioSintomas.csv") %>% 
   janitor::clean_names() %>% 
   # rename(se16 = s16) %>% 
-  pivot_longer(cols = starts_with("se"), names_to = "semana_epidemiologica", values_to = "casos")
+  pivot_longer(cols = starts_with("x"), names_to = "semana_epidemiologica", values_to = "casos")
 
 producto15_2 <- read_csv("output/producto15/SemanasEpidemiologicas.csv") %>% 
   janitor::clean_names() %>% 
-  pivot_longer(cols = starts_with("se"), names_to = "semana_epidemiologica", values_to = "casos") %>% 
+  pivot_longer(cols = starts_with("x"), names_to = "semana_epidemiologica", values_to = "casos") %>% 
   mutate(
     fecha = case_when(
       fecha == "Fin" ~ "fin_semana_epidemiologica",
