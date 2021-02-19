@@ -150,7 +150,7 @@ rm(producto22_2)
 
 producto23 <- read_csv("output/producto23/PacientesCriticos.csv") %>% 
   janitor::clean_names() %>% 
-  rename(categoria = casos) %>% 
+  rename(categoria = variable) %>% 
   pivot_longer(cols = starts_with("x"), names_to = "fecha", values_to = "casos") %>% 
   mutate(fecha = str_remove(fecha, "x"),
          fecha = ymd(fecha)) %>%
