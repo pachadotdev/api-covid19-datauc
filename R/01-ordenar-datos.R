@@ -6,6 +6,7 @@ library(tidyr)
 library(lubridate)
 library(stringr)
 library(purrr)
+library(arrow)
 
 # Funciones y rutas ----
 
@@ -33,59 +34,12 @@ ordenar2 <- function(x, p = "producto2", i = 1, j = 10) {
     select(fecha, everything())
 }
 
+convertir_arrow <- function(tabla,producto) {
+    tabla %>% 
+      write_dataset(sprintf("data/%s", producto), hive_style = F) 
+}
+
 # Outputs ----
-
-producto1 <- ordenar("output/producto1/Covid-19.csv")
-
-producto2 <- purrr::map_df(archivos_producto2, ordenar2)
-
-producto3 <- ordenar("output/producto3/CasosTotalesCumulativo.csv")
-
-producto4 <- purrr::map_df(archivos_producto4, ordenar2, p  = "producto4")
-
-producto5 <- read_csv("output/producto5/TotalesNacionales.csv") %>% 
-  janitor::clean_names() %>% 
-  rename(categoria = fecha) %>%
-  pivot_longer(cols = starts_with("x"), names_to = "fecha", values_to = "casos") %>%
-  mutate(fecha = str_remove(fecha, "x"),
-         fecha = ymd(fecha)) %>%
-  mutate(casos = str_remove(casos, "-"),
-         casos = as.numeric(casos))
-
-producto6 <- read_csv("output/producto6/bulk/data.csv") %>% 
-  janitor::clean_names() %>% 
-  select(fecha, everything())
-
-producto7 <- read_csv("output/producto7/PCR.csv") %>% 
-  janitor::clean_names() %>% 
-  mutate_if(is.numeric, as.character) %>% 
-  pivot_longer(cols = starts_with("x"), names_to = "fecha",
-               values_to = "casos") %>%
-  mutate(fecha = str_remove(fecha, "x"),
-         fecha = ymd(fecha)) %>%
-  mutate(casos = str_remove(casos, "-"),
-         casos = as.numeric(casos),
-         poblacion = as.numeric(poblacion),
-         codigo_region = as.numeric(codigo_region)) %>% 
-  select(fecha, everything())
-
-producto8 <- ordenar("output/producto8/UCI.csv")
-
-producto9 <- ordenar("output/producto9/HospitalizadosUCIEtario.csv")
-
-producto10 <- ordenar("output/producto10/FallecidosEtario.csv")
-
-producto11 <- read_csv("output/producto11/bulk/producto4.csv") %>% 
-  janitor::clean_names() %>% 
-  select(fecha, everything())
-
-producto12 <- read_csv("output/producto12/bulk/producto7.csv") %>% 
-  janitor::clean_names() %>% 
-  select(fecha, everything())
-
-producto13 <- ordenar("output/producto13/CasosNuevosCumulativo.csv")
-
-producto14 <- ordenar("output/producto14/FallecidosCumulativo.csv")
 
 # revisar si cambia s16 en versiones futuras del archivo ----
 # corregido en #56
@@ -112,17 +66,10 @@ producto15 <- producto15 %>%
   select(matches("semana"), everything()) %>% 
   arrange(inicio_semana_epidemiologica)
 
+producto15 <- producto15 %>% 
+  mutate(semana_epidemiologica = as.integer(gsub("x", "", semana_epidemiologica)))
+  
 rm(producto15_2)
-
-producto16 <- ordenar("output/producto16/CasosGeneroEtario.csv")
-
-producto17 <- ordenar("output/producto17/PCREstablecimiento.csv")
-
-producto18 <- ordenar("output/producto18/TasaDeIncidencia.csv")
-
-producto19 <- ordenar("output/producto19/CasosActivosPorComuna.csv")
-
-producto20 <- ordenar("output/producto20/NumeroVentiladores.csv")
 
 producto21 <- ordenar("output/producto21/SintomasCasosConfirmados.csv") %>% 
   mutate(categoria = "Casos Confirmados")
@@ -148,20 +95,94 @@ producto22 <- producto22 %>%
 
 rm(producto22_2)
 
-producto23 <- read_csv("output/producto23/PacientesCriticos.csv") %>% 
-  janitor::clean_names() %>% 
-  rename(categoria = variable) %>% 
-  pivot_longer(cols = starts_with("x"), names_to = "fecha", values_to = "casos") %>% 
-  mutate(fecha = str_remove(fecha, "x"),
-         fecha = ymd(fecha)) %>%
-  mutate(casos = str_remove(casos, "-"),
-         casos = as.numeric(casos),
-         categoria = gsub("criticos", "críticos", categoria)) %>% 
-  select(fecha, everything())
+tablas <- list(
+  producto1 = ordenar("output/producto1/Covid-19.csv"),
+  
+  producto2 = purrr::map_df(archivos_producto2, ordenar2),
+  
+  producto3 = ordenar("output/producto3/CasosTotalesCumulativo.csv"),
+  
+  producto4 = purrr::map_df(archivos_producto4, ordenar2, p  = "producto4"),
+  
+  producto5 = read_csv("output/producto5/TotalesNacionales.csv") %>% 
+    janitor::clean_names() %>% 
+    rename(categoria = fecha) %>%
+    pivot_longer(cols = starts_with("x"), names_to = "fecha", values_to = "casos") %>%
+    mutate(fecha = str_remove(fecha, "x"),
+           fecha = ymd(fecha)) %>%
+    mutate(casos = str_remove(casos, "-"),
+           casos = as.numeric(casos)),
+  
+  producto6 = read_csv("output/producto6/bulk/data.csv") %>% 
+    janitor::clean_names() %>% 
+    select(fecha, everything()),
+  
+  producto7 = read_csv("output/producto7/PCR.csv") %>% 
+    janitor::clean_names() %>% 
+    mutate_if(is.numeric, as.character) %>% 
+    pivot_longer(cols = starts_with("x"), names_to = "fecha",
+                 values_to = "casos") %>%
+    mutate(fecha = str_remove(fecha, "x"),
+           fecha = ymd(fecha)) %>%
+    mutate(casos = str_remove(casos, "-"),
+           casos = as.numeric(casos),
+           poblacion = as.numeric(poblacion),
+           codigo_region = as.numeric(codigo_region)) %>% 
+    select(fecha, everything()),
+  
+  producto8 = ordenar("output/producto8/UCI.csv"),
+  
+  producto9 = ordenar("output/producto9/HospitalizadosUCIEtario.csv"),
+  
+  producto10 = ordenar("output/producto10/FallecidosEtario.csv"),
+  
+  producto11 = read_csv("output/producto11/bulk/producto4.csv") %>% 
+    janitor::clean_names() %>% 
+    select(fecha, everything()),
+  
+  producto12 = read_csv("output/producto12/bulk/producto7.csv") %>% 
+    janitor::clean_names() %>% 
+    select(fecha, everything()),
+  
+  producto13 = ordenar("output/producto13/CasosNuevosCumulativo.csv"),
+  
+  producto14 = ordenar("output/producto14/FallecidosCumulativo.csv"),
+  
+  producto15 = producto15,
+  
+  producto16 = ordenar("output/producto16/CasosGeneroEtario.csv"),
+  
+  producto17 = ordenar("output/producto17/PCREstablecimiento.csv"),
+  
+  producto18 = ordenar("output/producto18/TasaDeIncidencia.csv"),
+  
+  producto19 = ordenar("output/producto19/CasosActivosPorComuna.csv"),
+  
+  producto20 = ordenar("output/producto20/NumeroVentiladores.csv"),
+  
+  producto21 = producto21,
+  
+  producto22 = producto22,
+  
+  producto23 = read_csv("output/producto23/PacientesCriticos.csv") %>% 
+    janitor::clean_names() %>% 
+    rename(categoria = variable) %>% 
+    pivot_longer(cols = starts_with("x"), names_to = "fecha", values_to = "casos") %>% 
+    mutate(fecha = str_remove(fecha, "x"),
+           fecha = ymd(fecha)) %>%
+    mutate(casos = str_remove(casos, "-"),
+           casos = as.numeric(casos),
+           categoria = gsub("criticos", "críticos", categoria)) %>% 
+    select(fecha, everything()),
+  
+  producto24 = ordenar("output/producto24/CamasHospital_Diario.csv") %>% 
+    mutate(tipo_de_cama = gsub("Basica", "Básica", tipo_de_cama))
+)
 
-producto24 <- ordenar("output/producto24/CamasHospital_Diario.csv") %>% 
-  mutate(tipo_de_cama = gsub("Basica", "Básica", tipo_de_cama))
+rm(producto15, producto21, producto22)
 
-rm(archivos_producto2, archivos_producto4, ordenar, ordenar2)
-
-save.image("data/datos-ordenados.RData")
+map2(
+  tablas,
+  names(tablas),
+  convertir_arrow
+)
